@@ -5338,8 +5338,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Ellerium Alert&quot; admin@foo
     </message>
     <message>
         <location line="+3"/>
-        <source>(60020 could be used only on mainnet)</source>
-        <translation type="unfinished">(60020 could be used only on mainnet)</translation>
+        <source>(6110 could be used only on mainnet)</source>
+        <translation type="unfinished">(6110 could be used only on mainnet)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -5353,7 +5353,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Ellerium Alert&quot; admin@foo
     </message>
     <message>
         <location line="+1"/>
-        <source>(must be 60020 for mainnet)</source>
+        <source>(must be 6110 for mainnet)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

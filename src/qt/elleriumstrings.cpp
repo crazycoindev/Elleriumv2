@@ -203,10 +203,10 @@ QT_TRANSLATE_NOOP("ellerium-core", ""
 QT_TRANSLATE_NOOP("ellerium-core", ""
 "You must specify a masternodeprivkey in the configuration. Please see "
 "documentation for help."),
-QT_TRANSLATE_NOOP("ellerium-core", "(60020 could be used only on mainnet)"),
+QT_TRANSLATE_NOOP("ellerium-core", "(6110 could be used only on mainnet)"),
 QT_TRANSLATE_NOOP("ellerium-core", "(default: %s)"),
 QT_TRANSLATE_NOOP("ellerium-core", "(default: 1)"),
-QT_TRANSLATE_NOOP("ellerium-core", "(must be 60020 for mainnet)"),
+QT_TRANSLATE_NOOP("ellerium-core", "(must be 6110 for mainnet)"),
 QT_TRANSLATE_NOOP("ellerium-core", "<category> can be:\n"),
 QT_TRANSLATE_NOOP("ellerium-core", "Accept command line and JSON-RPC commands"),
 QT_TRANSLATE_NOOP("ellerium-core", "Accept connections from outside (default: 1 if no -proxy or -connect)"),
