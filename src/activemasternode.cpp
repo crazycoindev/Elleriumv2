@@ -64,12 +64,12 @@ void CActiveMasternode::ManageStatus()
         }
 
         if (Params().NetworkID() == CBaseChainParams::MAIN) {
-            if (service.GetPort() != 60020) {
+            if (service.GetPort() != 6110) {
                 notCapableReason = strprintf("Invalid port: %u - only 60020 is supported on mainnet.", service.GetPort());
                 LogPrintf("CActiveMasternode::ManageStatus() - not capable: %s\n", notCapableReason);
                 return;
             }
-        } else if (service.GetPort() == 60020) {
+        } else if (service.GetPort() == 6110) {
             notCapableReason = strprintf("Invalid port: %u - 60020 is only supported on mainnet.", service.GetPort());
             LogPrintf("CActiveMasternode::ManageStatus() - not capable: %s\n", notCapableReason);
             return;
