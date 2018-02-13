@@ -1610,17 +1610,17 @@ int64_t GetBlockValue(int nHeight)
     int64_t nSubsidy = 0;
 
     if (nHeight == 1) {
-        nSubsidy = 60001 * COIN;
-    } else if (nHeight < 2222 && nHeight > 1) {
-        nSubsidy = 3 * COIN;
-    } else if (nHeight < Params().LAST_POW_BLOCK() && nHeight > 2222) {
-        nSubsidy = 3 * COIN;
+        nSubsidy = 60001;
+    } else if (nHeight < 4000 && nHeight > 1) {
+        nSubsidy = 3;
+    } else if (nHeight < Params().LAST_POW_BLOCK() && nHeight >= 4000) {
+        nSubsidy = 3;
     } else if (nHeight >= Params().LAST_POW_BLOCK()) {
-        nSubsidy = 3 * COIN;
+        nSubsidy = 3 / (100 / 20);
     } else {
-        nSubsidy = 0 * COIN;
+        nSubsidy = 0;
     }
-    return nSubsidy;
+    return nSubsidy * COIN;
 }
 
 int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCount)
@@ -1635,9 +1635,9 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
 	if (nHeight == 0)
 		return 0;
 
-    if (nHeight <= 2222 && nHeight >= 1) {
+    if (nHeight < 4000 && nHeight >= 1) {
         ret = blockValue / 30;
-    } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 1000) {
+    } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 4000) {
         ret = blockValue / (100 / 40);
     } else if (nHeight > Params().LAST_POW_BLOCK()) {
         int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;
