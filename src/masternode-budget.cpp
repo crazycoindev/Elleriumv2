@@ -796,7 +796,7 @@ CAmount CBudgetManager::GetTotalBudget(int nHeight)
     //get block value and calculate from that
     CAmount nSubsidy = 0;
 
-    return nSubsidy;
+    return 0 * COIN;
 }
 
 void CBudgetManager::NewBlock()
