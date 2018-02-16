@@ -43,9 +43,9 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-	(   0, uint256("0x0000056a04d932e837a8de986571004ebb6681fcf0c13f0605d8d0413c50a1a0"))
-	(   7, uint256("0x00000b079c042e0b9b91dbdf73baf4740d006b866469b062199a3eb3a56d5ecc"))
-  (4186, uint256("0x000000000ec9fb5e2157039221db7c5f435ffb4353328b7a891f5e666dab4bb7"));
+  	(   0, uint256("0x0000056a04d932e837a8de986571004ebb6681fcf0c13f0605d8d0413c50a1a0"))
+  	(   7, uint256("0x00000b079c042e0b9b91dbdf73baf4740d006b866469b062199a3eb3a56d5ecc"))
+    (4186, uint256("0x000000000ec9fb5e2157039221db7c5f435ffb4353328b7a891f5e666dab4bb7"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
     1518626515, // * UNIX timestamp of last checkpoint block
@@ -113,7 +113,7 @@ public:
         assert(hashGenesisBlock == uint256("0x0000056a04d932e837a8de986571004ebb6681fcf0c13f0605d8d0413c50a1a0"));
         assert(genesis.hashMerkleRoot == uint256("0x847141c1ce30120b72d912d0868c56a4296a833f070606f9277fdaa4e134b9c4"));
 
-        Seeds.push_back(CDNSSeedData("ellerium-dns1.steeppool.com", "ellerium-dns1.steeppool.com"));
+        Seeds.push_back(CDNSSeedData("ellerium-dns1.steeppool.com", ""));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 23);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 13);
