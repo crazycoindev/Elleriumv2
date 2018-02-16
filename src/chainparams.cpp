@@ -113,7 +113,7 @@ public:
         assert(hashGenesisBlock == uint256("0x0000056a04d932e837a8de986571004ebb6681fcf0c13f0605d8d0413c50a1a0"));
         assert(genesis.hashMerkleRoot == uint256("0x847141c1ce30120b72d912d0868c56a4296a833f070606f9277fdaa4e134b9c4"));
 
-        //vSeeds.push_back(CDNSSeedData("elleriumnode.dyndns.org", "elleriumnode.dyndns.org"));
+        Seeds.push_back(CDNSSeedData("ellerium-dns1.steeppool.com", "ellerium-dns1.steeppool.com"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 23);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 13);
