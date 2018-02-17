@@ -520,13 +520,13 @@ Value getblocktemplate(const Array& params, bool fHelp)
             delete pblocktemplate;
             pblocktemplate = NULL;
         }
-		
+
 		/* TODO-- too poor as per performance, but only way */
-		
+
 		CPubKey pubkey;
 		if (!pMiningKey->GetReservedKey(pubkey))
 			return NULL;
-		
+
         CScript scriptDummy = CScript() << ToByteVector(pubkey) << OP_CHECKSIG;
         pblocktemplate = CreateNewBlock(scriptDummy, pwalletMain, false);
         if (!pblocktemplate)
@@ -535,8 +535,8 @@ Value getblocktemplate(const Array& params, bool fHelp)
         // Need to update only after we know CreateNewBlock succeeded
         pindexPrev = pindexPrevNew;
     }
-	
-	
+
+
     CBlock* pblock = &pblocktemplate->block; // pointer for convenience
 
     // Update nTime
@@ -574,7 +574,7 @@ Value getblocktemplate(const Array& params, bool fHelp)
 
         transactions.push_back(entry);
     }
-	
+
 	Array coinbasetxn;
     map<uint256, int64_t> setTxIndex1;
     int j = 0;
@@ -642,7 +642,8 @@ Value getblocktemplate(const Array& params, bool fHelp)
     result.push_back(Pair("votes", aVotes));
 
 
-    Object masternodeObj;
+    //Object masternodeObj;
+    UniValue masternodeObj(UniValue::VOBJ);
     if (pblock->payee != CScript()) {
         CTxDestination address1;
         ExtractDestination(pblock->payee, address1);
@@ -654,7 +655,7 @@ Value getblocktemplate(const Array& params, bool fHelp)
         result.push_back(Pair("payee_amount", ""));
     }
 
-    result.push_back(Pair("masternode", masternodeObj));
+    //result.push_back(Pair("masternode", masternodeObj));
     result.push_back(Pair("masternode_payments", pblock->nTime > Params().StartMasternodePayments()));
     result.push_back(Pair("enforce_masternode_payments", true));
     result.push_back(Pair("masternode_payments_enforced", true));
